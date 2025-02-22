@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+.slot-container {
+    height: 100%; /* Match the height of the slot machine's slot */
+    overflow: hidden; /* Prevent content from exceeding the container */
+    position: relative; /* Needed for absolute positioning within */
+}
+
+.scrolling {
+    height: 100%;
+    text-align: center;
+    
+    -moz-transform: translateY(30%);
+    -webkit-transform: translateY(30%);
+    transform: translateY(30%);
+    
+    -moz-animation: my-animation 1s linear infinite;
+    -webkit-animation: my-animation 1s linear infinite;
+    animation: my-animation 1s linear infinite;
+}
+
+/* for Firefox */
+ @-moz-keyframes my-animation {
+    from { -moz-transform: translateY(-30%); }
+    to { -moz-transform: translateY(30%); }
+  }
+  
+  /* for Chrome */
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateY(-30%); }
+    to { -webkit-transform: translateY(30%); }
+  }
+  
+  @keyframes my-animation {
+    from {
+      -moz-transform: translateY(-30%);
+      -webkit-transform: translateY(-30%);
+      transform: translateY(-30%);
+    }
+    to {
+      -moz-transform: translateY(30%);
+      -webkit-transform: translateY(30%);
+      transform: translateY(30%);
+    }
+  }
